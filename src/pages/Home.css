@@ -1115,14 +1115,14 @@
 }
 
 .cta-stat-inline {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
+  transition: opacity var(--transition-fast);
 }
 
-.cta-stat-num {
-  font-family: var(--font-heading);
-position: relative;
+.award-row:hover .award-icon { opacity: 1; }
+
+/* Premium CTA Section */
+.cta-section {
+  position: relative;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
