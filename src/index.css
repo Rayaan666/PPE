@@ -185,3 +185,14 @@ img {
   border: 1px solid var(--color-rose-gold);
   opacity: 0.7;
 }
+
+/* Disable Custom Cursor on Mobile */
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
+}
+

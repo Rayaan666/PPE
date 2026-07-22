@@ -76,10 +76,17 @@ const Navbar = () => {
               <ul className="menu-links">
                 {navLinks.map((link, index) => (
                   <li key={index} className="menu-link-item">
-                    <Link to={link.path}>
-                      <span className="link-number">0{index + 1}</span>
-                      <span className="link-text">{link.name}</span>
-                    </Link>
+                    {link.name === 'Home' ? (
+                      <Link to={link.path}>
+                        <span className="link-number">0{index + 1}</span>
+                        <span className="link-text">{link.name}</span>
+                      </Link>
+                    ) : (
+                      <a href="#" onClick={(e) => e.preventDefault()}>
+                        <span className="link-number">0{index + 1}</span>
+                        <span className="link-text">{link.name}</span>
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -87,15 +94,15 @@ const Navbar = () => {
             <div className="menu-right">
               <div className="menu-info-block menu-link-item">
                 <span className="menu-label">Get in Touch</span>
-                <a href="mailto:hello@perfectpartyevents.ae" className="menu-contact-link">hello@perfectpartyevents.ae</a>
-                <a href="tel:+971501234567" className="menu-contact-link">+971 50 123 4567</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="menu-contact-link">hello@perfectpartyevents.ae</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="menu-contact-link">+971 50 123 4567</a>
               </div>
               <div className="menu-info-block menu-link-item" style={{marginTop: '3rem'}}>
                 <span className="menu-label">Socials</span>
                 <div className="menu-socials">
-                  <a href="#">Instagram</a>
-                  <a href="#">Facebook</a>
-                  <a href="#">Pinterest</a>
+                  <a href="#" onClick={(e) => e.preventDefault()}>Instagram</a>
+                  <a href="#" onClick={(e) => e.preventDefault()}>Facebook</a>
+                  <a href="#" onClick={(e) => e.preventDefault()}>Pinterest</a>
                 </div>
               </div>
             </div>

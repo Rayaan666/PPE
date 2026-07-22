@@ -150,7 +150,7 @@ const Home = () => {
             </h1>
             <div className="hero-meta fade-up" style={{ animationDelay: '1.5s' }}>
               <p>We plan, style, and coordinate premier corporate events, luxury weddings, theme decorations, and private celebrations across Dubai & Abu Dhabi, UAE.</p>
-              <Link to="/services" className="btn-editorial">Explore Services</Link>
+              <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial">Explore Services</a>
             </div>
           </div>
           <div className="hero-visual">
@@ -247,7 +247,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Luxury Wedding Planning &amp; Design</h3>
                 <p itemProp="description">Architecting breathtaking luxury weddings in Dubai and Abu Dhabi. We manage everything from bespoke venue selection and sublime floral styling to full-scale event production, ensuring your dream wedding is executed flawlessly.</p>
-                <Link to="/services" className="btn-editorial" itemProp="url" aria-label="Learn more about Luxury Wedding Planning in Dubai and Abu Dhabi">Learn More</Link>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about Luxury Wedding Planning in Dubai and Abu Dhabi">Learn More</a>
               </div>
               <div className="service-visual">
                 <div className="service-img">
@@ -268,7 +268,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Corporate Galas &amp; Awards Production</h3>
                 <p itemProp="description">Elevating high-end corporate retreats, annual galas, and prestigious award ceremonies across the UAE. We deliver complete audio-visual setup, stage design, VIP guest hospitality, and premium coordination.</p>
-                <Link to="/services" className="btn-editorial" itemProp="url" aria-label="Learn more about corporate gala and awards production in the UAE">Learn More</Link>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about corporate gala and awards production in the UAE">Learn More</a>
               </div>
             </article>
 
@@ -279,7 +279,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Bespoke Product Launch Events</h3>
                 <p itemProp="description">Unveil your brand to the UAE market with precision. We specialize in experiential product launches, premium media styling, high-end technical staging, and interactive custom brand environments.</p>
-                <Link to="/services" className="btn-editorial" itemProp="url" aria-label="Learn more about bespoke product launch events in the UAE">Learn More</Link>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about bespoke product launch events in the UAE">Learn More</a>
               </div>
               <div className="service-visual">
                 <div className="service-img">
@@ -300,7 +300,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Corporate Conferences &amp; Summits</h3>
                 <p itemProp="description">End-to-end congress and summit coordination in Dubai for global enterprises. Managing AV logistics, live broadcast streaming, interpreter setups, and premium registration portals.</p>
-                <Link to="/services" className="btn-editorial" itemProp="url" aria-label="Learn more about corporate conference and summit management in the UAE">Learn More</Link>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about corporate conference and summit management in the UAE">Learn More</a>
               </div>
             </article>
 
@@ -311,7 +311,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Experiential Brand Activations</h3>
                 <p itemProp="description">Forging powerful, emotional connections between consumers and your product. Interactive pop-up shops, luxury shopping mall setups, and creative digital installations across the Emirates.</p>
-                <Link to="/services" className="btn-editorial" itemProp="url" aria-label="Learn more about experiential brand activations in Dubai and Abu Dhabi">Learn More</Link>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about experiential brand activations in Dubai and Abu Dhabi">Learn More</a>
               </div>
               <div className="service-visual">
                 <div className="service-img">
@@ -440,7 +440,6 @@ const Home = () => {
         </div>
       </section>
 
-
       {/* Premium CTA Section */}
       <section className="cta-section">
         <div className="cta-bg-wrap">
@@ -465,14 +464,14 @@ const Home = () => {
               From intimate private affairs to grand-scale corporate galas across Dubai & Abu Dhabi — we engineer unforgettable events for clients who demand only the finest.
             </p>
             <div className="cta-actions">
-              <Link to="/contact" className="cta-btn-primary">
+              <a href="#" onClick={(e) => e.preventDefault()} className="cta-btn-primary">
                 <span>Book a Private Consultation</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </Link>
-              <Link to="/gallery" className="cta-btn-primary">
+              </a>
+              <a href="#" onClick={(e) => e.preventDefault()} className="cta-btn-primary">
                 <span>View Our Work</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </Link>
+              </a>
             </div>
           </div>
 
