@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+:root {
+  /* Strict Palette Maintained */
+  --color-soft-peach: #F7D5C7;
+  --color-light-peach: #FCE7DF;
+  --color-blush-pink: #E8B4B8;
+  --color-dusty-rose: #D98E95;
+  --color-rose-gold: #C9888D;
+  
+  --color-dark-charcoal: #2F2F2F;
+  --color-light-grey: #777777;
+  
+  --color-white: #FFFFFF;
+  --color-very-light-peach: #FFF9F7;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-subheading: 'Playfair Display', serif;
+  --font-body: 'Manrope', sans-serif;
+  
+  /* Layout Spacing (Increased for luxury) */
+  --spacing-xs: 1rem;
+  --spacing-sm: 2rem;
+  --spacing-md: 4rem;
+  --spacing-lg: 8rem;
+  --spacing-xl: 12rem;
+
+  /* Structural */
+  --border-delicate: 1px solid rgba(201, 136, 141, 0.2);
+  --border-strong: 1px solid var(--color-rose-gold);
+  
+  --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-med: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important; /* Custom Cursor */
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--color-very-light-peach);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark-charcoal);
+  background-color: var(--color-very-light-peach);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Overhaul - Massive and Editorial */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-dark-charcoal);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+h1 { font-size: clamp(4rem, 8vw, 9rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(3rem, 6vw, 6rem); letter-spacing: -0.01em; }
+h3 { font-size: clamp(2rem, 4vw, 3.5rem); }
+
+.subheading {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  color: var(--color-dusty-rose);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+}
+
+p {
+  color: var(--color-light-grey);
+  font-size: 1.1rem;
+  font-weight: 300;
+  max-width: 60ch;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.section-padding {
+  padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Luxury Interactive Elements */
+.btn-editorial {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-dark-charcoal);
+  padding: 1.5rem 0;
+  border-bottom: var(--border-delicate);
+  transition: border-color var(--transition-fast);
+  position: relative;
+}
+
+.btn-editorial::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-dark-charcoal);
+  transition: width var(--transition-slow);
+}
+
+.btn-editorial:hover::after {
+  width: 100%;
+}
+
+/* Text Masking Reveal Utility */
+.reveal-text {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.reveal-inner {
+  display: inline-block;
+  transform: translateY(110%);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-rose-gold);
+  color: var(--color-white);
+}
+
+/* Custom Cursor Styles */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-dusty-rose);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-cursor.hover {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-light-peach);
+  border: 1px solid var(--color-rose-gold);
+  opacity: 0.7;
+}

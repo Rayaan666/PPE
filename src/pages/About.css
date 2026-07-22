@@ -1,0 +1,907 @@
+/* ==========================================================================
+   ABOUT PAGE - LUXURY EDITORIAL CSS
+   ========================================================================== */
+
+.about-page-wrapper {
+  position: relative;
+  background-color: var(--color-very-light-peach);
+  overflow: hidden;
+  color: var(--color-dark-charcoal);
+}
+
+/* Background Gradients & Shapes */
+.bg-ambient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+
+.orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--color-light-peach); }
+.orb-2 { top: 40%; right: -20%; width: 60vw; height: 60vw; background: var(--color-soft-peach); }
+.orb-3 { bottom: 10%; left: 10%; width: 40vw; height: 40vw; background: var(--color-blush-pink); opacity: 0.2; }
+
+/* Global Utilities */
+.section-relative {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 60px rgba(201, 136, 141, 0.1);
+}
+
+.rose-border {
+  border: 1px solid rgba(201, 136, 141, 0.3);
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--color-rose-gold);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   1. EDITORIAL HERO
+   ========================================================================== */
+.about-hero {
+  min-height: 100svh;
+  padding: clamp(8rem, 15vh, 11rem) 0 clamp(4rem, 8vh, 7rem);
+  display: flex;
+  align-items: center;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+  position: relative;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.about-hero-title-wrap {
+  position: relative;
+  margin-bottom: clamp(2rem, 4vh, 3rem);
+}
+
+.about-hero-title-line {
+  position: absolute;
+  left: 0;
+  bottom: -1.25rem;
+  width: min(12rem, 45%);
+  height: 1px;
+  background: var(--color-rose-gold);
+  opacity: 0.55;
+  transform-origin: left;
+}
+
+.about-hero h1 {
+  font-size: clamp(3.75rem, 6.3vw, 7rem);
+  line-height: 0.92;
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero h1 em {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  color: var(--color-dusty-rose);
+  display: block;
+}
+
+.about-hero-text {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  max-width: 34rem;
+  line-height: 1.75;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--color-rose-gold);
+}
+
+.about-hero-visual {
+  position: relative;
+  width: 100%;
+  height: clamp(32rem, 72vh, 48rem);
+  z-index: 1;
+  min-width: 0;
+}
+
+.about-hero-img-mask {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: min(20vw, 18rem) min(20vw, 18rem) 0 0;
+  box-shadow: 0 40px 100px rgba(201, 136, 141, 0.2);
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1); /* For GSAP to scale down */
+  transform-origin: top center;
+}
+
+/* ==========================================================================
+   2. OUR STORY (Storytelling Blocks)
+   ========================================================================== */
+.story-section {
+  padding: 2rem 0 var(--spacing-xl);
+}
+
+.story-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.story-block:nth-child(even) {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.story-block:nth-child(even) .story-visual {
+  order: 2;
+}
+.story-block:nth-child(even) .story-content {
+  order: 1;
+}
+
+.story-visual {
+  position: relative;
+}
+
+.story-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  /* Organic masking via border-radius */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  box-shadow: 0 30px 60px rgba(201, 136, 141, 0.15);
+  height: 75vh;
+}
+
+.story-block:nth-child(even) .story-img-container {
+  border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  height: 65vh;
+}
+
+.story-block:nth-child(3) .story-img-container {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  height: 80vh;
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-decorator {
+  position: absolute;
+  border: 1px solid var(--color-rose-gold);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  top: -20px;
+  left: 20px;
+  right: -20px;
+  bottom: 20px;
+  z-index: -1;
+  opacity: 0.5;
+  transition: transform 0.5s ease;
+}
+
+.story-content {
+  max-width: 550px;
+}
+
+.story-content h2 {
+  margin-bottom: 2rem;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+.story-content h2 em {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  color: var(--color-dusty-rose);
+}
+
+.story-content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.story-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  color: var(--color-rose-gold);
+  margin: 4rem 0;
+  padding-left: 2rem;
+  border-left: 2px solid var(--color-dusty-rose);
+}
+
+.story-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-rose-gold), transparent);
+  margin: 8rem 0;
+  opacity: 0.3;
+}
+
+/* ==========================================================================
+   3. THE PERFECT PARTY SIGNATURE
+   ========================================================================== */
+.signature-section {
+  padding: 2rem 0 var(--spacing-xl);
+  background: var(--color-white);
+  position: relative;
+  min-height: 120vh;
+}
+
+.sig-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.path-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 600px;
+}
+
+.sig-path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sig-path-line {
+  fill: none;
+  stroke: var(--color-rose-gold);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+  opacity: 0.4;
+}
+
+.station-item {
+  position: absolute;
+  width: 240px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+/* Positioning stations along the path (approximate percentages) */
+.station-1 { top: 10%; left: 10%; }
+.station-2 { top: 40%; left: 35%; }
+.station-3 { top: 20%; left: 65%; }
+.station-4 { top: 60%; left: 85%; }
+.station-5 { top: 90%; left: 50%; }
+
+.station-card {
+  padding: 2rem;
+  border-radius: 12px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.station-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(201, 136, 141, 0.2);
+}
+
+.station-num {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-rose-gold);
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.station-title {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.station-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-light-grey);
+}
+
+/* ==========================================================================
+   4. WHY WE ARE DIFFERENT (Split Screen)
+   ========================================================================== */
+.diff-section {
+  padding: 0;
+  background: var(--color-very-light-peach);
+}
+
+.diff-layout {
+  display: flex;
+  height: 100vh; /* Fixed height for scrolling effect */
+}
+
+.diff-left {
+  width: 50%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.diff-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.diff-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, var(--color-very-light-peach));
+  opacity: 0.8;
+}
+
+.diff-right {
+  width: 50%;
+  padding: 10rem 4rem 10rem 6rem;
+  position: relative;
+}
+
+.diff-header {
+  margin-bottom: 6rem;
+}
+
+.diff-cards {
+  position: relative;
+  padding-bottom: 20vh;
+}
+
+.diff-card {
+  padding: 3rem;
+  border-radius: 16px;
+  margin-bottom: -4rem; /* Overlap effect */
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 15px 35px rgba(201, 136, 141, 0.08);
+  transform-origin: bottom center;
+  transition: transform 0.5s ease;
+}
+
+.diff-card:nth-child(even) {
+  transform: rotate(2deg);
+}
+.diff-card:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.diff-card:hover {
+  transform: translateY(-10px) rotate(0deg);
+  z-index: 10;
+  box-shadow: 0 25px 50px rgba(201, 136, 141, 0.15);
+}
+
+.diff-card h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark-charcoal);
+}
+
+.diff-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   5. BEHIND EVERY CELEBRATION
+   ========================================================================== */
+.behind-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.behind-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.horizontal-layer-wrap {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+}
+
+.layer-img-wrap {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.layer-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.layer-caption {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-light-grey);
+}
+
+/* Positions for layered images */
+.img-1 { top: 10%; left: 5%; width: 35vw; height: 50vh; z-index: 2; }
+.img-2 { top: 30%; left: 30%; width: 40vw; height: 45vh; z-index: 1; opacity: 0.9; }
+.img-3 { top: 15%; right: 5%; width: 25vw; height: 60vh; z-index: 3; }
+.img-4 { bottom: 0%; left: 15%; width: 30vw; height: 35vh; z-index: 4; }
+
+/* ==========================================================================
+   6. LUXURY PROCESS (Floating Papers)
+   ========================================================================== */
+.process-section {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-very-light-peach);
+  position: relative;
+  min-height: 140vh;
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.process-grid {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 900px;
+}
+
+.process-block {
+  position: absolute;
+  width: 320px;
+  padding: 3rem 2.5rem;
+  background: var(--color-white);
+  border: 1px solid rgba(201, 136, 141, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+}
+
+.process-block:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(201, 136, 141, 0.15);
+  border-color: var(--color-rose-gold);
+  z-index: 10;
+}
+
+/* Diagonal Arrangement */
+.pb-1 { top: 0; left: 0; }
+.pb-2 { top: 15%; left: 35%; }
+.pb-3 { top: 35%; right: 0; }
+.pb-4 { top: 55%; left: 10%; }
+.pb-5 { top: 75%; left: 45%; }
+.pb-6 { bottom: -10%; right: 10%; }
+
+.process-num {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-soft-peach);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.process-title {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.process-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.process-connector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.process-connector path {
+  fill: none;
+  stroke: var(--color-dusty-rose);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  opacity: 0.3;
+}
+
+/* ==========================================================================
+   7. OUR PROMISE (Cinematic Ending)
+   ========================================================================== */
+.promise-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.promise-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.promise-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1); /* GSAP scale */
+}
+
+.promise-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(247, 213, 199, 0.7), rgba(201, 136, 141, 0.6));
+  mix-blend-mode: multiply;
+}
+
+.promise-glass {
+  position: absolute;
+  inset: 5%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1;
+  border-radius: 20px;
+}
+
+.promise-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: var(--color-white);
+  padding: 0 2rem;
+}
+
+.promise-content h2 {
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  color: var(--color-white);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.promise-content h2 em {
+  font-family: var(--font-subheading);
+  font-style: italic;
+}
+
+.promise-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin: 0 auto 4rem;
+}
+
+.btn-promise {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  background: var(--color-white);
+  color: var(--color-dark-charcoal);
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-promise:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   5. WHY CHOOSE US
+   ========================================================================== */
+.why-us-section {
+  padding: 8rem 0;
+  background: var(--color-off-white);
+  position: relative;
+}
+
+.why-us-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.why-us-header h2 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  margin-top: 1rem;
+}
+
+.why-us-header h2 em {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  color: var(--color-dusty-rose);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pillar-card {
+  padding: 3.5rem 3rem;
+  background: var(--color-white);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  border-radius: 8px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border-color: var(--color-rose-gold);
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--color-rose-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.pillar-card:hover::before {
+  transform: scaleX(1);
+}
+
+.pillar-icon {
+  font-family: var(--font-subheading);
+  font-size: 2.5rem;
+  color: var(--color-dusty-rose);
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.pillar-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark-charcoal);
+}
+
+.pillar-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. THE VISIONARY / CEO
+   ========================================================================== */
+.ceo-section {
+  padding: 8rem 0;
+  background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.ceo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ceo-visual {
+  position: relative;
+  width: 100%;
+}
+
+.ceo-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.ceo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ceo-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.ceo-content {
+  padding: 4rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  margin-left: -5rem;
+}
+
+.ceo-content h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.ceo-content h2 em {
+  font-family: var(--font-subheading);
+  font-style: italic;
+  color: var(--color-dusty-rose);
+}
+
+.ceo-bio {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: var(--color-text-light);
+}
+
+.ceo-signature {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--color-rose-gold);
+  padding-left: 1.5rem;
+}
+
+.ceo-name {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.ceo-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-dusty-rose);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .about-hero {
+    min-height: auto;
+    padding-top: 9rem;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  
+  .about-hero-content { max-width: 48rem; }
+  .about-hero-visual { height: min(65vh, 42rem); }
+  .about-hero-img-mask { border-radius: min(30vw, 14rem) min(30vw, 14rem) 0 0; }
+  
+  .story-block, .story-block:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .story-block:nth-child(even) .story-visual { order: 0; }
+  .story-block:nth-child(even) .story-content { order: 1; }
+  
+  .ceo-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .ceo-content {
+    margin-left: 0;
+    margin-top: -5rem;
+    padding: 3rem 2rem;
+  }
+  
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .diff-layout { flex-direction: column; height: auto; }
+  .diff-left { width: 100%; height: 50vh; position: relative; }
+  .diff-right { width: 100%; padding: 4rem 2rem; }
+  .diff-cards { padding-bottom: 0; }
+  
+  .process-grid { height: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-block { position: relative; width: 100%; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; margin-bottom: 2rem; }
+  .process-connector { display: none; }
+  
+  .horizontal-layer-wrap { height: auto; display: flex; flex-direction: column; gap: 2rem; }
+  .layer-img-wrap { position: relative; width: 100% !important; height: 40vh !important; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 7.5rem 0 4rem;
+  }
+
+  .about-hero-grid { gap: 2.5rem; }
+  .about-hero h1 { font-size: clamp(3.25rem, 16vw, 5rem); }
+  .about-hero-text { padding-left: 1rem; }
+  .about-hero-visual { height: min(62vh, 34rem); }
+
+  .process-grid { grid-template-columns: 1fr; }
+  .promise-glass { inset: 2%; }
+}
