@@ -41,6 +41,7 @@
 
 .hero-meta {
   max-width: 300px;
+  margin-left: 0;
 }
 
 .hero-meta p {
@@ -53,7 +54,8 @@
 
 .hero-meta .btn-editorial {
   position: relative;
-  top: -1.25rem;
+  top: -0.75rem;
+  margin: 1.5rem 0 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }

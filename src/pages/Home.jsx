@@ -15,12 +15,12 @@ const homeStructuredData = {
       name: 'Perfect Party Events',
       url: 'https://www.perfectpartyevents.ae/',
       logo: 'https://www.perfectpartyevents.ae/logo.png',
-      email: 'hello@perfectpartyevents.ae',
+      email: 'info@perfectpartyeventsae.com',
       description: 'Luxury event management, wedding planning, event styling, and corporate event production across Dubai and Abu Dhabi, UAE.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Dubai Design District, Building 7, Office 401',
-        addressLocality: 'Dubai',
+        streetAddress: 'Plot 3, ME 40, Musaffah',
+        addressLocality: 'Abu Dhabi',
         addressCountry: 'AE',
       },
       areaServed: [
@@ -156,9 +156,10 @@ const Home = () => {
           <div className="hero-visual">
             <div className="hero-img-mask">
               <img 
-                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-                alt="Luxury Event" 
+                src="/home/hero.png"
+                alt="Luxury Dubai wedding reception styled by Perfect Party Events"
                 className="hero-img-inner"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -444,8 +445,8 @@ const Home = () => {
       <section className="cta-section">
         <div className="cta-bg-wrap">
           <img
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80"
-            alt="Luxury Event Background"
+            src="/home/CTA.png"
+            alt="Luxury event setting by Perfect Party Events"
             className="cta-bg-img"
           />
           <div className="cta-bg-overlay"></div>
@@ -468,7 +469,10 @@ const Home = () => {
                 <span>Book a Private Consultation</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </Link>
-              <Link to="/gallery" className="cta-btn-ghost">View Our Work</Link>
+              <Link to="/gallery" className="cta-btn-primary">
+                <span>View Our Work</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </Link>
             </div>
           </div>
 

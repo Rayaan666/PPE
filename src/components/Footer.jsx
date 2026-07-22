@@ -41,11 +41,9 @@ const Footer = () => {
               <div className="footer-nav-col">
                 <span className="footer-label">Contact</span>
                 <address className="footer-address">
-                  Dubai Design District<br/>
-                  Building 7, Office 401<br/>
-                  Dubai, UAE
+                  Plot 3, ME 40, Musaffah, Abu Dhabi
                 </address>
-                <a href="mailto:hello@perfectpartyevents.ae" className="footer-email">hello@perfectpartyevents.ae</a>
+                <a href="mailto:info@perfectpartyeventsae.com" className="footer-email">info@perfectpartyeventsae.com</a>
               </div>
             </div>
           </div>

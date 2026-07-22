@@ -83,11 +83,11 @@
   justify-content: center;
   align-items: center;
   border-top: var(--border-delicate);
-  padding: 0.8rem 0;
+  padding: 1.25rem 0;
 }
 
 .footer-logo-img {
-  height: 70px;
+  height: clamp(120px, 10vw, 170px);
   width: auto;
   object-fit: contain;
   opacity: 0.25;
@@ -127,6 +127,10 @@
 }
 
 @media (max-width: 768px) {
+  .footer-logo-img {
+    height: 110px;
+  }
+
   .footer-nav-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
