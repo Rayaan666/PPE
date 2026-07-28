@@ -41,10 +41,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Journal', path: '/blogs' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Services', path: '#', disabled: true },
+    { name: 'Gallery', path: '#', disabled: true },
+    { name: 'Journal', path: '#', disabled: true },
+    { name: 'Contact', path: '#', disabled: true },
   ];
 
   return (
@@ -76,16 +76,16 @@ const Navbar = () => {
               <ul className="menu-links">
                 {navLinks.map((link, index) => (
                   <li key={index} className="menu-link-item">
-                    {link.name === 'Home' ? (
-                      <Link to={link.path}>
-                        <span className="link-number">0{index + 1}</span>
-                        <span className="link-text">{link.name}</span>
-                      </Link>
-                    ) : (
+                    {link.disabled ? (
                       <a href="#" onClick={(e) => e.preventDefault()}>
                         <span className="link-number">0{index + 1}</span>
                         <span className="link-text">{link.name}</span>
                       </a>
+                    ) : (
+                      <Link to={link.path}>
+                        <span className="link-number">0{index + 1}</span>
+                        <span className="link-text">{link.name}</span>
+                      </Link>
                     )}
                   </li>
                 ))}

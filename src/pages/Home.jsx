@@ -247,7 +247,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Luxury Wedding Planning &amp; Design</h3>
                 <p itemProp="description">Architecting breathtaking luxury weddings in Dubai and Abu Dhabi. We manage everything from bespoke venue selection and sublime floral styling to full-scale event production, ensuring your dream wedding is executed flawlessly.</p>
-                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about Luxury Wedding Planning in Dubai and Abu Dhabi">Learn More</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" aria-label="Learn more about Luxury Wedding Planning in Dubai and Abu Dhabi">Learn More</a>
               </div>
               <div className="service-visual">
                 <div className="service-img">
@@ -268,7 +268,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Corporate Galas &amp; Awards Production</h3>
                 <p itemProp="description">Elevating high-end corporate retreats, annual galas, and prestigious award ceremonies across the UAE. We deliver complete audio-visual setup, stage design, VIP guest hospitality, and premium coordination.</p>
-                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about corporate gala and awards production in the UAE">Learn More</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" aria-label="Learn more about corporate gala and awards production in the UAE">Learn More</a>
               </div>
             </article>
 
@@ -279,7 +279,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Bespoke Product Launch Events</h3>
                 <p itemProp="description">Unveil your brand to the UAE market with precision. We specialize in experiential product launches, premium media styling, high-end technical staging, and interactive custom brand environments.</p>
-                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about bespoke product launch events in the UAE">Learn More</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" aria-label="Learn more about bespoke product launch events in the UAE">Learn More</a>
               </div>
               <div className="service-visual">
                 <div className="service-img">
@@ -300,7 +300,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Corporate Conferences &amp; Summits</h3>
                 <p itemProp="description">End-to-end congress and summit coordination in Dubai for global enterprises. Managing AV logistics, live broadcast streaming, interpreter setups, and premium registration portals.</p>
-                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about corporate conference and summit management in the UAE">Learn More</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" aria-label="Learn more about corporate conference and summit management in the UAE">Learn More</a>
               </div>
             </article>
 
@@ -311,7 +311,7 @@ const Home = () => {
               <div className="service-info">
                 <h3 itemProp="name">Experiential Brand Activations</h3>
                 <p itemProp="description">Forging powerful, emotional connections between consumers and your product. Interactive pop-up shops, luxury shopping mall setups, and creative digital installations across the Emirates.</p>
-                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" itemProp="url" aria-label="Learn more about experiential brand activations in Dubai and Abu Dhabi">Learn More</a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" aria-label="Learn more about experiential brand activations in Dubai and Abu Dhabi">Learn More</a>
               </div>
               <div className="service-visual">
                 <div className="service-img">
@@ -419,21 +419,14 @@ const Home = () => {
             <div className="partner-stage fade-up" aria-label="Selected distinguished partners">
               <span className="partner-stage-label">Selected collaborations</span>
               <div className="partner-flow">
-                {[
-                  { name: 'EMAAR', style: 'emaar' },
-                  { name: 'Four Seasons', style: 'four-seasons' },
-                  { name: 'MARRIOTT BONVOY', style: 'marriott' },
-                  { name: 'ADNOC', style: 'adnoc' },
-                  { name: 'DAMAC', style: 'damac' },
-                  { name: 'Jumeirah', style: 'jumeirah' },
-                  { name: 'DEWA', style: 'dewa' },
-                  { name: 'BVLGARI HOTELS', style: 'bvlgari' },
-                ].map((brand) => (
-                  <span className={`partner-wordmark ${brand.style}`} key={brand.name}>{brand.name}</span>
+                {Array.from({ length: 23 }, (_, i) => 62 + i).map((num) => (
+                  <img 
+                    src={`/brands/Untitled design (${num}).png`} 
+                    alt={`Partner Brand ${num}`} 
+                    className="partner-logo" 
+                    key={num} 
+                  />
                 ))}
-              </div>
-              <div className="partner-sectors" aria-hidden="true">
-                <span>Luxury</span><i></i><span>Hospitality</span><i></i><span>Enterprise</span>
               </div>
             </div>
           </div>

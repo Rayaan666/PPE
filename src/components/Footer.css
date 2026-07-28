@@ -83,19 +83,19 @@
   justify-content: center;
   align-items: center;
   border-top: var(--border-delicate);
-  padding: 1.25rem 0;
+  padding: 2.5rem 0;
 }
 
 .footer-logo-img {
-  height: clamp(120px, 10vw, 170px);
+  height: clamp(180px, 15vw, 250px);
   width: auto;
   object-fit: contain;
-  opacity: 0.25;
+  opacity: 1;
   transition: opacity var(--transition-med);
 }
 
 .footer-logo-img:hover {
-  opacity: 0.5;
+  opacity: 0.9;
 }
 
 .footer-bottom {
@@ -128,7 +128,7 @@
 
 @media (max-width: 768px) {
   .footer-logo-img {
-    height: 110px;
+    height: 160px;
   }
 
   .footer-nav-grid {

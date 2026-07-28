@@ -1,0 +1,263 @@
+/* src/pages/services/BrandActivations.css */
+
+.act-page {
+  font-family: var(--font-body);
+  color: var(--color-warm-white);
+  background-color: var(--color-dark-charcoal); /* Starts dark */
+  overflow-x: hidden;
+}
+
+.act-page h1,
+.act-page h2,
+.act-page h3 {
+  font-family: var(--font-heading-primary);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* 1. Hero Section */
+.act-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 5% 50px;
+  background-color: var(--color-dusty-rose); /* Vibrant entry */
+  overflow: hidden;
+}
+
+.act-hero-shapes {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.act-hero-shapes::before {
+  content: '';
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 60vw; height: 60vw;
+  background: var(--color-rose-gold);
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(120px);
+}
+.act-hero-shapes::after {
+  content: '';
+  position: absolute;
+  bottom: -20%; left: -10%;
+  width: 40vw; height: 40vw;
+  background: var(--color-soft-peach);
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(100px);
+}
+
+.act-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.act-breadcrumbs {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0.8;
+}
+.act-breadcrumbs a {
+  color: var(--color-warm-white);
+  text-decoration: none;
+}
+
+.act-hero-title {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.act-hero-desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.act-btn {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  background-color: var(--color-warm-white);
+  color: var(--color-dark-charcoal);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+.act-btn:hover {
+  background-color: var(--color-rose-gold);
+  color: var(--color-warm-white);
+}
+
+/* 2. Intro */
+.act-intro {
+  padding: 10rem 5%;
+  background-color: var(--color-warm-white);
+  color: var(--color-dark-charcoal);
+}
+.act-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.act-intro h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+.act-intro p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(47,47,47,0.8);
+}
+
+/* 3. Capabilities (Immersive Full Screen Scrolling) */
+.act-cap-wrapper {
+  position: relative;
+  background-color: var(--color-dark-charcoal);
+  color: var(--color-warm-white);
+}
+.act-cap-pin {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.act-cap-imgs {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+.act-cap-img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.act-cap-img.active {
+  opacity: 0.5; /* Keeps text legible */
+}
+
+.act-cap-text-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.act-cap-text-inner {
+  padding: 0 10%;
+  width: 100%;
+}
+.act-cap-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.act-cap-slide h3 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  margin-bottom: 1rem;
+  color: var(--color-rose-gold);
+}
+.act-cap-slide p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Spacer for scrolling the pinned section */
+.act-spacer {
+  height: 400vh; /* 4 slides */
+}
+
+/* 4. Process */
+.act-process {
+  padding: 10rem 5%;
+  background-color: var(--color-light-peach);
+  color: var(--color-dark-charcoal);
+}
+.act-process-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.act-process-header h2 {
+  font-size: 3.5rem;
+}
+.act-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.act-process-item {
+  background: var(--color-warm-white);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(201,136,141,0.1);
+  transition: transform 0.3s;
+}
+.act-process-item:hover {
+  transform: translateY(-10px);
+}
+.act-process-item .step {
+  font-family: var(--font-heading-primary);
+  font-size: 3rem;
+  color: var(--color-dusty-rose);
+  margin-bottom: 1rem;
+  display: block;
+}
+.act-process-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.act-process-item p {
+  color: rgba(47,47,47,0.8);
+  line-height: 1.6;
+}
+
+/* 5. CTA */
+.act-cta {
+  padding: 10rem 5%;
+  text-align: center;
+  background-color: var(--color-dark-charcoal);
+}
+.act-cta h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-warm-white);
+}
+.act-cta p {
+  font-size: 1.25rem;
+  color: rgba(255,249,247,0.8);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .act-cap-slide h3 { font-size: 2.5rem; }
+  .act-cap-slide p { font-size: 1.1rem; }
+}

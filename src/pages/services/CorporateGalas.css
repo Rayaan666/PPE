@@ -1,0 +1,263 @@
+/* src/pages/services/CorporateGalas.css */
+
+.gala-page {
+  font-family: var(--font-body);
+  color: var(--color-warm-white);
+  background-color: var(--color-dark-charcoal);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.gala-page h1,
+.gala-page h2,
+.gala-page h3 {
+  font-family: var(--font-heading-primary);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Ambient Darkness */
+.gala-ambient {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(201,136,141,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(255,249,247,0.05) 0%, transparent 40%);
+}
+
+/* Dark Glassmorphism */
+.dark-glass {
+  background: rgba(47, 47, 47, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 249, 247, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Sharp corners for corporate feel */
+}
+
+/* 1. Hero Section */
+.gala-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 5% 50px;
+  z-index: 1;
+}
+
+.gala-hero-bg {
+  position: absolute;
+  top: 0; right: 0; width: 60%; height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.gala-hero-img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.gala-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, var(--color-dark-charcoal) 20%, transparent 100%);
+}
+
+.gala-hero-content {
+  position: relative;
+  max-width: 800px;
+}
+
+.gala-breadcrumbs {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 12px;
+  opacity: 0.7;
+}
+.gala-breadcrumbs a {
+  color: var(--color-warm-white);
+  text-decoration: none;
+}
+
+.gala-hero-title {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--color-rose-gold);
+}
+
+.gala-hero-desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  color: rgba(255,249,247,0.8);
+  max-width: 600px;
+}
+
+.gala-btn {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  background-color: transparent;
+  color: var(--color-warm-white);
+  border: 1px solid var(--color-rose-gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.gala-btn:hover {
+  background-color: var(--color-rose-gold);
+  color: var(--color-dark-charcoal);
+}
+
+/* 2. Intro */
+.gala-intro {
+  padding: 10rem 5%;
+  position: relative;
+  z-index: 2;
+}
+.gala-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5rem;
+}
+.gala-intro h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.gala-intro p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255,249,247,0.7);
+}
+
+/* 3. Capabilities (Sticky Side Scroll / Grid) */
+.gala-cap {
+  padding: 10rem 5%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gala-cap-left {
+  flex: 0 0 350px;
+}
+.gala-cap-sticky {
+  position: sticky;
+  top: 150px;
+}
+.gala-cap-sticky h2 {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: var(--color-rose-gold);
+}
+.gala-cap-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.gala-cap-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.gala-cap-card-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.gala-cap-card-text {
+  padding: 3rem;
+  margin-top: -100px;
+  margin-left: 10%;
+  width: 90%;
+}
+.gala-cap-card-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.gala-cap-card-text p {
+  color: rgba(255,249,247,0.7);
+  line-height: 1.6;
+}
+
+/* 4. Process */
+.gala-process {
+  padding: 10rem 5%;
+  position: relative;
+  z-index: 2;
+}
+.gala-process-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.gala-process-header h2 {
+  font-size: 3.5rem;
+}
+.gala-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gala-process-item {
+  padding: 3rem;
+  border-top: 2px solid var(--color-rose-gold);
+}
+.gala-process-item .step {
+  font-family: var(--font-heading-secondary);
+  font-size: 2.5rem;
+  color: var(--color-rose-gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+.gala-process-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.gala-process-item p {
+  color: rgba(255,249,247,0.7);
+  line-height: 1.6;
+}
+
+/* 5. CTA */
+.gala-cta {
+  padding: 10rem 5%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255,249,247,0.1);
+}
+.gala-cta h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+.gala-cta p {
+  font-size: 1.25rem;
+  color: rgba(255,249,247,0.7);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+@media (max-width: 1024px) {
+  .gala-hero-bg { width: 100%; clip-path: none; opacity: 0.5; }
+  .gala-hero-overlay { background: linear-gradient(to top, var(--color-dark-charcoal) 0%, transparent 100%); }
+  .gala-cap { flex-direction: column; }
+  .gala-cap-sticky { position: static; margin-bottom: 4rem; }
+  .gala-cap-card-text { margin-top: -50px; margin-left: 5%; width: 95%; }
+}

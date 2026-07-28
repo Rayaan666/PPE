@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer-col-left">
             <span className="footer-label">Ready for perfection?</span>
             <h2 className="footer-cta-text">Let's craft your <br/> <span className="subheading">legacy.</span></h2>
-            <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" style={{marginTop: '2rem'}}>
+            <a href="#" onClick={(e) => e.preventDefault()} className="btn-editorial" style={{marginTop: '2rem', display: 'inline-block'}}>
               Start the conversation
             </a>
           </div>
@@ -22,7 +22,7 @@ const Footer = () => {
                 <span className="footer-label">Menu</span>
                 <ul>
                   <li><Link to="/">Home</Link></li>
-                  <li><a href="#" onClick={(e) => e.preventDefault()}>About Us</a></li>
+                  <li><Link to="/about">About Us</Link></li>
                   <li><a href="#" onClick={(e) => e.preventDefault()}>Services</a></li>
                   <li><a href="#" onClick={(e) => e.preventDefault()}>Portfolio</a></li>
                   <li><a href="#" onClick={(e) => e.preventDefault()}>Journal</a></li>

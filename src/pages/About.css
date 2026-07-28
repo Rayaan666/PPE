@@ -152,15 +152,22 @@
    2. OUR STORY (Storytelling Blocks)
    ========================================================================== */
 .story-section {
-  padding: 2rem 0 var(--spacing-xl);
+  padding: 2rem 0 3rem;
+  background:
+    radial-gradient(circle at 8% 42%, rgba(232, 180, 184, 0.18), transparent 32%),
+    linear-gradient(135deg, #fff 0%, var(--color-very-light-peach) 100%);
 }
 
 .story-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 4rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.story-block:last-child {
+  margin-bottom: 0;
 }
 
 .story-block:nth-child(even) {
@@ -185,12 +192,14 @@
   /* Organic masking via border-radius */
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   box-shadow: 0 30px 60px rgba(201, 136, 141, 0.15);
-  height: 75vh;
+  height: 52vh;
+  max-height: 480px;
 }
 
 .story-block:nth-child(even) .story-img-container {
   border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-  height: 65vh;
+  height: 52vh;
+  max-height: 480px;
 }
 
 .story-block:nth-child(3) .story-img-container {
@@ -260,23 +269,23 @@
    3. THE PERFECT PARTY SIGNATURE
    ========================================================================== */
 .signature-section {
-  padding: 2rem 0 var(--spacing-xl);
+  padding: 3rem 0 2rem;
   background: var(--color-white);
   position: relative;
-  min-height: 120vh;
+  min-height: auto;
 }
 
 .sig-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
 }
 
 .path-container {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  height: 600px;
+  height: 520px;
 }
 
 .sig-path-svg {
@@ -309,7 +318,7 @@
 .station-2 { top: 40%; left: 35%; }
 .station-3 { top: 20%; left: 65%; }
 .station-4 { top: 60%; left: 85%; }
-.station-5 { top: 90%; left: 50%; }
+.station-5 { top: 82%; left: 50%; }
 
 .station-card {
   padding: 2rem;
@@ -345,91 +354,154 @@
 }
 
 /* ==========================================================================
-   4. WHY WE ARE DIFFERENT (Split Screen)
+   4. WHY WE ARE DIFFERENT (Interactive Layout)
    ========================================================================== */
-.diff-section {
-  padding: 0;
-  background: var(--color-very-light-peach);
-}
-
-.diff-layout {
-  display: flex;
-  height: 100vh; /* Fixed height for scrolling effect */
-}
-
-.diff-left {
-  width: 50%;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+.why-us-section {
+  padding: 2rem 0 6rem;
+  background: var(--color-white);
   overflow: hidden;
 }
 
-.diff-img {
+.compact-accordion {
+  display: flex;
+  width: 100%;
+  height: 65vh;
+  min-height: 500px;
+  max-height: 700px;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.accordion-panel {
+  position: relative;
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.accordion-panel:hover {
+  flex: 4;
+}
+
+.accordion-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 1.5s ease;
 }
 
-.diff-overlay {
+.accordion-panel:hover .accordion-bg {
+  transform: scale(1.05);
+}
+
+.accordion-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent, var(--color-very-light-peach));
-  opacity: 0.8;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.38) 58%, rgba(0,0,0,0.16) 100%),
+    linear-gradient(to right, rgba(0,0,0,0.3), transparent 45%);
+  transition: background 0.5s ease;
 }
 
-.diff-right {
-  width: 50%;
-  padding: 10rem 4rem 10rem 6rem;
-  position: relative;
+.accordion-panel:hover .accordion-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%);
 }
 
-.diff-header {
-  margin-bottom: 6rem;
+.accordion-content {
+  position: absolute;
+  inset: 0;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--color-white);
 }
 
-.diff-cards {
-  position: relative;
-  padding-bottom: 20vh;
+.accordion-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.diff-card {
-  padding: 3rem;
-  border-radius: 16px;
-  margin-bottom: -4rem; /* Overlap effect */
-  position: relative;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 1);
-  box-shadow: 0 15px 35px rgba(201, 136, 141, 0.08);
-  transform-origin: bottom center;
-  transition: transform 0.5s ease;
+.accordion-panel:hover .accordion-header {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  position: absolute;
 }
 
-.diff-card:nth-child(even) {
-  transform: rotate(2deg);
-}
-.diff-card:nth-child(odd) {
-  transform: rotate(-1deg);
-}
-
-.diff-card:hover {
-  transform: translateY(-10px) rotate(0deg);
-  z-index: 10;
-  box-shadow: 0 25px 50px rgba(201, 136, 141, 0.15);
-}
-
-.diff-card h3 {
+.accordion-num {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  color: var(--color-dark-charcoal);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: #f4c7cb;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.65);
 }
 
-.diff-card p {
-  font-size: 1rem;
+.accordion-title-vertical {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.08;
+  max-width: 12rem;
+  color: var(--color-white);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.75);
+}
+
+.accordion-details {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  right: 2.5rem;
+}
+
+.accordion-panel:hover .accordion-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.accordion-desc {
+  font-size: 1.1rem;
   line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  max-width: 450px;
+}
+
+@media (max-width: 992px) {
+  .compact-accordion {
+    flex-direction: column;
+    height: 800px;
+  }
+  .accordion-title-vertical {
+    writing-mode: horizontal-tb;
+    transform: none;
+    white-space: normal;
+  }
+  .accordion-header {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .accordion-num {
+    margin-bottom: 0;
+  }
 }
 
 /* ==========================================================================
@@ -661,7 +733,7 @@
    5. WHY CHOOSE US
    ========================================================================== */
 .why-us-section {
-  padding: 8rem 0;
+  padding: 2rem 0 6rem;
   background: var(--color-off-white);
   position: relative;
 }
@@ -748,96 +820,170 @@
    4. THE VISIONARY / CEO
    ========================================================================== */
 .ceo-section {
-  padding: 8rem 0;
-  background: var(--color-white);
+  padding: 4rem 0;
+  background-color: var(--color-very-light-peach);
+  color: var(--color-dark-charcoal);
   position: relative;
   overflow: hidden;
+  z-index: 1;
+}
+
+.ceo-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 60vw;
+  color: rgba(201, 136, 141, 0.05);
+  line-height: 1;
+  z-index: -1;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .ceo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 8rem;
   align-items: center;
 }
 
 .ceo-visual {
   position: relative;
   width: 100%;
+  order: 2;
 }
 
-.ceo-image-container {
+.ceo-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  border-radius: 4px;
+  aspect-ratio: 4/5;
+  border: 1px solid rgba(201, 136, 141, 0.3);
+  padding: 1.5rem;
+  background: transparent;
+  transform: translateY(0);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.ceo-frame::after {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 120px;
+  height: 120px;
+  border-top: 2px solid var(--color-rose-gold);
+  border-right: 2px solid var(--color-rose-gold);
+  z-index: 0;
+  transition: all 0.6s ease;
+}
+
+.ceo-frame::before {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  width: 120px;
+  height: 120px;
+  border-bottom: 2px solid var(--color-rose-gold);
+  border-left: 2px solid var(--color-rose-gold);
+  z-index: 0;
+  transition: all 0.6s ease;
+}
+
+.ceo-frame:hover {
+  transform: translateY(-10px);
+}
+
+.ceo-frame:hover::after {
+  top: -1.5rem;
+  right: -1.5rem;
+}
+
+.ceo-frame:hover::before {
+  bottom: -1.5rem;
+  left: -1.5rem;
 }
 
 .ceo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: 2;
+  filter: contrast(1.05) brightness(0.95);
 }
 
 .ceo-img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 40%);
-  pointer-events: none;
+  display: none;
 }
 
 .ceo-content {
-  padding: 4rem;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  border-radius: 8px;
   position: relative;
   z-index: 2;
-  margin-left: -5rem;
+  order: 1;
+}
+
+.ceo-content-inner {
+  padding-right: 2rem;
+}
+
+.rose-gold-text {
+  color: var(--color-rose-gold) !important;
 }
 
 .ceo-content h2 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  margin-bottom: 2rem;
-  line-height: 1.1;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  color: var(--color-dark-charcoal);
 }
 
 .ceo-content h2 em {
   font-family: var(--font-subheading);
   font-style: italic;
-  color: var(--color-dusty-rose);
+  color: var(--color-rose-gold);
+  font-weight: 300;
+}
+
+.ceo-separator {
+  width: 80px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
 }
 
 .ceo-bio {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  color: var(--color-text-light);
+  font-size: 1.1rem;
+  line-height: 2;
+  margin-bottom: 4rem;
+  color: var(--color-light-grey);
+  font-weight: 300;
 }
 
 .ceo-signature {
   display: flex;
   flex-direction: column;
-  border-left: 2px solid var(--color-rose-gold);
-  padding-left: 1.5rem;
+  position: relative;
 }
 
 .ceo-name {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  color: var(--color-text);
-  margin-bottom: 0.25rem;
+  font-family: var(--font-subheading);
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--color-dark-charcoal);
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .ceo-title {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-dusty-rose);
+  letter-spacing: 0.3em;
+  color: var(--color-rose-gold);
 }
 
 /* ==========================================================================
@@ -867,12 +1013,19 @@
   
   .ceo-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
+  }
+  .ceo-visual {
+    order: 1;
+    padding: 0 1rem;
   }
   .ceo-content {
-    margin-left: 0;
-    margin-top: -5rem;
-    padding: 3rem 2rem;
+    order: 2;
+    padding: 0 1rem;
+    margin-top: 0;
+  }
+  .ceo-content-inner {
+    padding-right: 0;
   }
   
   .pillars-grid {

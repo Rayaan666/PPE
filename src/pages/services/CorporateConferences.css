@@ -1,0 +1,278 @@
+/* src/pages/services/CorporateConferences.css */
+
+.conf-page {
+  font-family: var(--font-body);
+  color: var(--color-dark-charcoal);
+  background-color: var(--color-warm-white);
+  overflow-x: hidden;
+}
+
+.conf-page h1,
+.conf-page h2,
+.conf-page h3 {
+  font-family: var(--font-heading-primary);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* 1. Hero Section */
+.conf-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 5% 50px;
+  background-color: var(--color-soft-peach);
+  overflow: hidden;
+}
+
+.conf-hero-grid {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(201,136,141,0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(201,136,141,0.1) 1px, transparent 1px);
+  z-index: 1;
+}
+
+.conf-hero-img-container {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  width: 40%;
+  height: 60%;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 40px 80px rgba(47,47,47,0.15);
+}
+.conf-hero-img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.conf-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  background: rgba(255,249,247,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255,249,247,0.5);
+  box-shadow: 0 20px 40px rgba(47,47,47,0.05);
+}
+
+.conf-breadcrumbs {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 12px;
+  color: rgba(47,47,47,0.6);
+}
+.conf-breadcrumbs a {
+  color: var(--color-dark-charcoal);
+  text-decoration: none;
+}
+
+.conf-hero-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.conf-hero-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  color: rgba(47,47,47,0.8);
+}
+
+.conf-btn {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  background-color: var(--color-dark-charcoal);
+  color: var(--color-warm-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+.conf-btn:hover {
+  background-color: var(--color-rose-gold);
+}
+
+/* 2. Intro */
+.conf-intro {
+  padding: 10rem 5%;
+  background-color: var(--color-warm-white);
+}
+.conf-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.conf-intro h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+.conf-intro p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(47,47,47,0.8);
+  border-left: 4px solid var(--color-rose-gold);
+  padding-left: 2rem;
+}
+
+/* 3. Capabilities (Asymmetric Masonry) */
+.conf-cap {
+  padding: 10rem 5%;
+  background-color: var(--color-light-peach);
+  position: relative;
+}
+.conf-cap-header {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+.conf-cap-header h2 {
+  font-size: 4rem;
+}
+.conf-masonry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.conf-cap-item {
+  position: relative;
+}
+.conf-cap-item:nth-child(even) {
+  margin-top: 150px;
+}
+.conf-cap-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.conf-cap-text {
+  background: var(--color-warm-white);
+  padding: 3rem;
+  width: 80%;
+  margin-top: -100px;
+  margin-left: 10%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(201,136,141,0.15);
+}
+.conf-cap-item:nth-child(even) .conf-cap-text {
+  margin-left: 0;
+  right: -20%;
+}
+.conf-cap-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.conf-cap-text p {
+  color: rgba(47,47,47,0.8);
+  line-height: 1.6;
+}
+
+/* 4. Process */
+.conf-process {
+  padding: 10rem 5%;
+  background-color: var(--color-warm-white);
+}
+.conf-process-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.conf-process-header h2 {
+  font-size: 3.5rem;
+}
+.conf-process-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.conf-process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 2px; height: 100%;
+  background: rgba(201,136,141,0.3);
+}
+.conf-timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+}
+.conf-timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.conf-timeline-content {
+  width: 45%;
+  background: var(--color-light-peach);
+  padding: 3rem;
+  border-radius: 4px;
+}
+.conf-timeline-dot {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; height: 20px;
+  background: var(--color-rose-gold);
+  border-radius: 50%;
+  border: 4px solid var(--color-warm-white);
+  z-index: 2;
+}
+.conf-timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.conf-timeline-content p {
+  color: rgba(47,47,47,0.8);
+  line-height: 1.6;
+}
+
+/* 5. CTA */
+.conf-cta {
+  padding: 10rem 5%;
+  text-align: center;
+  background-color: var(--color-dark-charcoal);
+  color: var(--color-warm-white);
+}
+.conf-cta h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-soft-peach);
+}
+.conf-cta p {
+  font-size: 1.25rem;
+  color: rgba(255,249,247,0.8);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+@media (max-width: 1024px) {
+  .conf-hero-img-container { display: none; }
+  .conf-hero-content { max-width: 100%; padding: 2rem; }
+  .conf-masonry { grid-template-columns: 1fr; gap: 6rem; }
+  .conf-cap-item:nth-child(even) { margin-top: 0; }
+  .conf-cap-item:nth-child(even) .conf-cap-text { right: 0; margin-left: 10%; width: 80%; }
+  .conf-process-timeline::before { left: 0; }
+  .conf-timeline-item { flex-direction: column; align-items: flex-start; }
+  .conf-timeline-item:nth-child(even) { flex-direction: column; }
+  .conf-timeline-content { width: 90%; margin-left: 10%; }
+  .conf-timeline-dot { left: 0; }
+}

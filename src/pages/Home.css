@@ -710,60 +710,25 @@
 
 .partner-flow {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: clamp(2.2rem, 4vw, 4.5rem) clamp(2.5rem, 5vw, 5.5rem);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2.2rem, 4vw, 4.5rem) clamp(2rem, 4vw, 4rem);
   padding-left: 3rem;
 }
 
-.partner-wordmark {
-  display: inline-block;
-  color: var(--color-dark-charcoal);
-  line-height: 1;
-  white-space: nowrap;
-  opacity: 0.68;
-  transition: color var(--transition-med), opacity var(--transition-med), transform var(--transition-med);
-}
-
-.partner-wordmark:hover {
-  color: var(--color-dusty-rose);
+.partner-logo {
+  justify-self: center;
+  height: clamp(80px, 9vw, 125px);
+  width: 100%;
+  max-width: 210px;
+  object-fit: contain;
   opacity: 1;
-  transform: translateY(-4px);
+  transition: transform var(--transition-med);
 }
 
-.partner-wordmark.emaar,
-.partner-wordmark.damac,
-.partner-wordmark.adnoc,
-.partner-wordmark.dewa {
-  font-family: var(--font-body);
-  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
-  font-weight: 500;
-  letter-spacing: 0.18em;
-}
-
-.partner-wordmark.four-seasons,
-.partner-wordmark.jumeirah {
-  font-family: var(--font-heading);
-  font-size: clamp(2.7rem, 4.4vw, 4.5rem);
-  font-weight: 400;
-}
-
-.partner-wordmark.marriott,
-.partner-wordmark.bvlgari {
-  font-family: var(--font-heading);
-  font-size: clamp(1.7rem, 3.1vw, 3.2rem);
-  letter-spacing: 0.1em;
-}
-
-.partner-wordmark.jumeirah {
-  margin-left: clamp(0rem, 5vw, 5rem);
-  font-style: italic;
-}
-
-.partner-wordmark.bvlgari {
-  font-family: var(--font-body);
-  font-weight: 300;
+.partner-logo:hover {
+  transform: scale(1.05) translateY(-4px);
 }
 
 .partner-sectors {
@@ -1722,6 +1687,9 @@
   .partner-stage {
     min-height: 0;
   }
+  .partner-flow {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
   .trustedby-sub {
     max-width: 100%;
   }
@@ -1769,6 +1737,7 @@
     padding-left: 1.5rem;
   }
   .partner-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.25rem 2rem;
   }
   .partner-sectors {
